@@ -6,6 +6,7 @@ In which it will again schedule another webhook for every 6 hrs
 
  To run the application
 node index.js
+node webhooks.js
 
  PORT 8000
  POST http://localhost:8000/entries
