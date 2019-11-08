@@ -47,6 +47,7 @@ cron.schedule("15 * * * *", function () {
 
             // trigger a specific webHook
             webHooks.trigger('addEntries', {data: obj});
+            myEmitter.emit('emailNotification', obj);
 
             var emitter = webHooks.getEmitter();
 
