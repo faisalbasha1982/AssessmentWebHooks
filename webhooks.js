@@ -47,7 +47,6 @@ cron.schedule("15 * * * *", function () {
 
             // trigger a specific webHook
             webHooks.trigger('addEntries', {data: obj});
-            myEmitter.emit('emailNotification', obj);
 
             var emitter = webHooks.getEmitter();
 
@@ -59,9 +58,7 @@ cron.schedule("15 * * * *", function () {
     
                 // checks if duration of the startTime and endTime are greater than 23 or 23.5 hrs
                 if(duration >= 23 || duration >=23.5)
-                {
-                    myEmitter.on('emailNotification', function(data) {
-    
+                {    
                         // emails will be sent 
                         let transporter = nodeMailer.createTransport({
                             service: "gmail",
@@ -85,7 +82,6 @@ cron.schedule("15 * * * *", function () {
                                 console.log(error);
                             }
                         });
-                });
                }
     
             });         
