@@ -21,6 +21,9 @@ cron.schedule("15 * * * *", function () {
     console.log("Running Cron Job creating");
     ++counter;
 
+    // creates an object with token with random digits & alphabets
+    // startTime from Now,
+    // endTime from random() 
     var obj = {};
     var token = crypto.randomBytes(64).toString('hex');
     var startTime =  new Date().getTime();
